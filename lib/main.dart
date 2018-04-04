@@ -44,7 +44,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   var _jokes = [
     "What time did the man go to the dentist? Tooth hurt-y.",
 	  "My dad literally told me this one last week: 'Did you hear about the guy who invented Lifesavers? They say he made a mint.'",
@@ -70,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
   var _txt = "Click the button, get a dad joke!";
 
-  void _incrementCounter() {
+  void _changeText() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -118,15 +117,19 @@ class _MyHomePageState extends State<MyHomePage> {
             new Text(
               'Welcome to DadBot!',
             ),
-            new Text(
-              _txt,
-              style: Theme.of(context).textTheme.display1,
+            new Padding(
+              padding: new EdgeInsets.all(10.0),
+              child: new Text(
+                _txt,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.display1,
+              ),
             ),
           ],
         ),
       ),
       floatingActionButton: new FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _changeText,
         tooltip: 'Increment',
         child: new Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
