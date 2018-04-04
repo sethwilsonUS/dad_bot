@@ -67,14 +67,14 @@ class _MyHomePageState extends State<MyHomePage> {
     "I just read a book about Stockholm syndrome. It was pretty bad at first, but by the end I liked it.",
 	  "What's the difference between a hippo and a zippo? One is really heavy, the other is a little lighter."
   ];
-  var _txt = "Click the button, get a dad joke!";
+  var _txt = "Tap the button, get a dad joke!";
 
   void _changeText() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
+      // _text without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       var rng = new Random();
       _txt = _jokes[rng.nextInt(_jokes.length)];
@@ -130,8 +130,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: new FloatingActionButton(
         onPressed: _changeText,
-        tooltip: 'Increment',
-        child: new Icon(Icons.add),
+        tooltip: 'Tell a Dad Joke!',
+        child: new Icon(Icons.tag_faces),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
